@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <p *ngIf="mensagem">{{mensagem}}</p>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Login</ion-label>
+      <ion-input type="email" name="email" class="form-control" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Senha</ion-label>
+      <ion-input type="password" name="password" class="form-control" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="block" color="primary">Login</ion-button>
+  </form>
+  <ion-button shape="block" color="primary" (click)="presentModal()">Esqueceu a senha?</ion-button>
+</ion-content>
