@@ -19,8 +19,6 @@ export class AuthGuard implements CanActivate {
                 this.router.navigate(['/login']);
                 return false;
             }
-            console.log('Data e Hora de Expiração do Token: ', this.jwtHelper.getTokenExpirationDate());
-            console.log('Token expirou? ', this.jwtHelper.isTokenExpired());
             return true;
         }
         this.router.navigate(['/login']);

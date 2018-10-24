@@ -24,4 +24,35 @@ export class ProfessorService {
                 })
             );
     }
+
+    saveProfessor(url: string, name: string, dataNascimento: string, curriculum: string, status: boolean,
+                  foto: string): Observable<boolean> {
+        return this.http.post(url,
+            {name: name, birthDate: dataNascimento, curriculum: curriculum, status: status, imagem: foto})
+            .pipe(
+                map(result => {
+                    return true;
+                })
+            );
+    }
+
+    updateProfessor(url: string, id: string, name: string, dataNascimento: string, curriculum: string, status: boolean,
+                    foto: string): Observable<boolean> {
+        return this.http.put(url + id,
+            {name: name, birthDate: dataNascimento, curriculum: curriculum, status: status, imagem: foto})
+            .pipe(
+                map(result => {
+                    return true;
+                })
+            );
+    }
+
+    deleteProfessor(url: string, id: number): Observable<boolean> {
+        return this.http.delete(url + id)
+            .pipe(
+                map(result => {
+                    return true;
+                })
+            );
+    }
 }

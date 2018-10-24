@@ -12,7 +12,7 @@ export class AppComponent {
   public appPages = [
       {
           title: 'Início',
-          url: '/',
+          url: '/home',
           icon: 'home'
       },
       {
@@ -22,10 +22,10 @@ export class AppComponent {
       },
       {
         title: 'Cadastro Professor',
-        url: '/cadastroProfessor',
+        url: '/save-professor',
         icon: 'list'
       }
-  ]
+  ];
 
   constructor(
     private platform: Platform,

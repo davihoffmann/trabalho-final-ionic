@@ -11,6 +11,8 @@ const routes: Routes = [
       canActivate: [AuthGuard] },
   { path: 'datail-professor', loadChildren: './professor/datail-professor/datail-professor.module#DatailProfessorPageModule',
       canActivate: [AuthGuard] },
+  { path: 'save-professor', loadChildren: './professor/save-professor/save-professor.module#SaveProfessorPageModule',
+      canActivate: [AuthGuard]  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

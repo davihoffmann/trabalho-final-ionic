@@ -15,6 +15,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthenticationService} from './services/authentication.service';
 import {AuthGuard} from './auth/auth.guard';
+import { Camera } from '@ionic-native/camera/ngx';
 
 export function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -32,6 +33,7 @@ export function tokenGetter() {
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     AuthenticationService,
     AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
