@@ -16,13 +16,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthenticationService} from './services/authentication.service';
 import {AuthGuard} from './auth/auth.guard';
 import { Camera } from '@ionic-native/camera/ngx';
+import {SendButtonComponent} from './components/send-button/send-button.component';
 
 export function tokenGetter() {
     return localStorage.getItem('access_token');
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SendButtonComponent],
   entryComponents: [],
   imports: [
       BrowserModule,

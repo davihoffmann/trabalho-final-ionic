@@ -12,6 +12,7 @@ export class ListProfessorPage implements OnInit {
   public list: any;
   navigationSubscription;
   public filtro: string;
+  page = 1;
 
   constructor(private professorService: ProfessorService, private router: Router) {
       this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -26,10 +27,21 @@ export class ListProfessorPage implements OnInit {
   }
 
   listProfessores() {
-    this.professorService.getProfessores('http://173.82.104.22:5000/teachers')
+    this.professorService.getProfessores(`http://173.82.104.22:5000/teachers?_page=${this.page}`)
         .subscribe(data => {
             this.list = data;
         });
+  }
+
+  loadMore(event) {
+    this.page++;
+    this.professorService.getProfessores(`http://173.82.104.22:5000/teachers?_page=${this.page}`)
+        .subscribe(data => {
+          for (const professor of Object.values(data)[1]) {
+            this.list.items.push(professor);
+          }
+        });
+    event.target.complete();
   }
 
   ngOnInit() {}

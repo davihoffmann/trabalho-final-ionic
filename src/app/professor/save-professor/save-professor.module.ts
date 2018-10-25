@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { SaveProfessorPage } from './save-professor.page';
-import {SendButtonComponent} from '../../components/send-button/send-button.component';
+import {SaveProfessorPage} from './save-professor.page';
 
 const routes: Routes = [
   {
@@ -23,8 +22,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-      SaveProfessorPage,
-      SendButtonComponent
+      SaveProfessorPage
   ]
 })
 export class SaveProfessorPageModule {}
