@@ -43,7 +43,6 @@ export class SaveProfessorPage implements OnInit {
   }
 
   public submit() {
-      console.log(this.id);
       if (this.id !== undefined) {
           this.professorService.updateProfessor('http://173.82.104.22:5000/teachers/', this.id, this.name,
               this.dataNascimento = new Date().toISOString(), this.curriculum, this.status, this.foto)
@@ -69,7 +68,7 @@ export class SaveProfessorPage implements OnInit {
 
   tirarFoto() {
     const options: CameraOptions = {
-        quality: 70,
+        quality: 40,
         destinationType: this.camera.DestinationType.DATA_URL,
         encodingType: this.camera.EncodingType.JPEG,
         mediaType: this.camera.MediaType.PICTURE

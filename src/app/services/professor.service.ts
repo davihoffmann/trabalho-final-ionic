@@ -42,6 +42,7 @@ export class ProfessorService {
             {name: name, birthDate: dataNascimento, curriculum: curriculum, status: status, imagem: foto})
             .pipe(
                 map(result => {
+                    this.currentProfessor = null;
                     return true;
                 })
             );

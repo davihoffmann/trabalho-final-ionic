@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-
-import { Platform } from '@ionic/angular';
+import { MenuController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import {AuthenticationService} from './services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,19 +19,28 @@ export class AppComponent {
       {
         title: 'Lista Professores',
         url: '/list-professor',
-        icon: 'person'
+        icon: 'list'
       },
       {
         title: 'Cadastro Professor',
         url: '/save-professor',
-        icon: 'list'
+        icon: 'ios-add'
+      },
+      {
+          title: 'Configuração',
+          url: '/save-professor',
+          icon: 'ios-cog'
       }
   ];
+
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private authenticationService: AuthenticationService,
+    private router: Router,
+    private menuController: MenuController
   ) {
     this.initializeApp();
   }
@@ -40,5 +50,11 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['login']);
+    this.menuController.close();
   }
 }

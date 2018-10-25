@@ -10,7 +10,6 @@ import {NavigationEnd, Router} from '@angular/router';
 export class ListProfessorPage implements OnInit {
 
   public list: any;
-  public mensagem: string;
   navigationSubscription;
   public filtro: string;
 

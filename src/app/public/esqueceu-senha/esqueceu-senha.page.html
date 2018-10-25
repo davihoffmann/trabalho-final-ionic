@@ -1,16 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>esqueceu_senha</ion-title>
+    <ion-title>Esqueceu a Senha?</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <form (ngSubmit)="submit()">
-    <ion-item>
-      <ion-label>Login</ion-label>
-      <ion-input type="email" name="email" class="form-control" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-button type="submit" shape="block" color="primary">Recuperar Senha</ion-button>
-  </form>
-  <ion-button shape="block" color="primary" (click)="dismiss()">Fechar</ion-button>
+<ion-content>
+  <ion-card-header>
+    <ion-card-subtitle>Infome o e-mail para recuperar a senha.</ion-card-subtitle>
+    <ion-card-title>Esqueceu a Senha?</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form (ngSubmit)="submit()">
+      <ion-item>
+        <ion-label>Login</ion-label>
+        <ion-input type="email" name="email" class="form-control" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-button type="submit" shape="block" color="primary">Recuperar Senha</ion-button>
+    </form>
+    <ion-button shape="block" color="primary" (click)="dismiss()">Fechar</ion-button>
+  </ion-card-content>
 </ion-content>
