@@ -28,11 +28,10 @@ export class AppComponent {
       },
       {
           title: 'Configuração',
-          url: '/save-professor',
+          url: '/configuracao',
           icon: 'ios-cog'
       }
   ];
-
 
   constructor(
     private platform: Platform,

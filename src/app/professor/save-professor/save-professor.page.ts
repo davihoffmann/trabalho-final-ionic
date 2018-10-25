@@ -80,4 +80,5 @@ export class SaveProfessorPage implements OnInit {
             this.mensagem = 'Erro ao tirar a foto do professor.';
         });
   }
+
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -36,6 +36,6 @@
       <ion-toggle [(ngModel)]="status" name="status" (ionChange)="statusOnChange(status)"></ion-toggle>
     </ion-item>
 
-    <ion-button type="submit" shape="block" color="primary">Criar Professor</ion-button>
+    <app-send-button textoDoBotao="Criar Professor"></app-send-button>
   </form>
 </ion-content>

@@ -5,14 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
-import {EsqueceuSenhaPage} from '../esqueceu-senha/esqueceu-senha.page';
-import {SendButtonComponent} from '../../components/send-button/send-button.component';
+import { ConfiguracaoPage } from './configuracao.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: ConfiguracaoPage
   }
 ];
 
@@ -23,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage, EsqueceuSenhaPage, SendButtonComponent],
-  entryComponents: [EsqueceuSenhaPage]
+  declarations: [ConfiguracaoPage]
 })
-export class LoginPageModule {}
+export class ConfiguracaoPageModule {}

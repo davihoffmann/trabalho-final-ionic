@@ -24,7 +24,12 @@ export function tokenGetter() {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule,
+  imports: [
+      BrowserModule,
+      IonicModule.forRoot(),
+      AppRoutingModule,
+      IonicStorageModule.forRoot(),
+      HttpClientModule,
       JwtModule.forRoot({
           config: {
               tokenGetter: tokenGetter

@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'datail-professor', loadChildren: './professor/datail-professor/datail-professor.module#DatailProfessorPageModule',
       canActivate: [AuthGuard] },
   { path: 'save-professor', loadChildren: './professor/save-professor/save-professor.module#SaveProfessorPageModule',
-      canActivate: [AuthGuard]  },
+      canActivate: [AuthGuard] },
+  { path: 'configuracao', loadChildren: './configuracao/configuracao.module#ConfiguracaoPageModule',
+      canActivate: [AuthGuard] },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
