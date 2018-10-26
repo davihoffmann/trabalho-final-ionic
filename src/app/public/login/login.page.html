@@ -23,7 +23,7 @@
           <ion-label>Senha</ion-label>
           <ion-input type="password" name="password" class="form-control" [(ngModel)]="senha"></ion-input>
         </ion-item>
-        <app-send-button textoDoBotao="Login"></app-send-button>
+        <ion-button type="submit" shape="block" color="primary">Logar</ion-button>
       </form>
       <ion-button shape="block" color="primary" (click)="presentModal()">Esqueceu a senha?</ion-button>
     </ion-card-content>

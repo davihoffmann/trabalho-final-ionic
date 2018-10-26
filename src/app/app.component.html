@@ -16,6 +16,11 @@
               <ion-label>{{p.title}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+
+      <ion-footer>
+        <ion-list>
           <ion-menu-toggle>
             <ion-item [routerDirection]="'root'" (click)="logout()">
               <ion-icon slot="start" name="ios-log-out" color="primary"></ion-icon>
@@ -23,7 +28,7 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-      </ion-content>
+      </ion-footer>
 
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>

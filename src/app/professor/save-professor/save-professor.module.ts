@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {SaveProfessorPage} from './save-professor.page';
+import {SendButtonComponent} from '../../components/send-button/send-button.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-      SaveProfessorPage
+      SaveProfessorPage, SendButtonComponent
   ]
 })
 export class SaveProfessorPageModule {}

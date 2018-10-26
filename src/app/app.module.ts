@@ -23,7 +23,7 @@ export function tokenGetter() {
 }
 
 @NgModule({
-  declarations: [AppComponent, SendButtonComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
       BrowserModule,
