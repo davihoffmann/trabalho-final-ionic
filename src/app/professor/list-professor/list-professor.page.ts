@@ -27,7 +27,7 @@ export class ListProfessorPage implements OnInit {
   }
 
   listProfessores() {
-    this.professorService.getProfessores(`http://173.82.104.22:5000/teachers?_page=${this.page}`)
+    this.professorService.getProfessores(`teachers?_page=${this.page}`)
         .subscribe(data => {
             this.list = data;
         });
@@ -35,7 +35,7 @@ export class ListProfessorPage implements OnInit {
 
   loadMore(event) {
     this.page++;
-    this.professorService.getProfessores(`http://173.82.104.22:5000/teachers?_page=${this.page}`)
+    this.professorService.getProfessores(`teachers?_page=${this.page}`)
         .subscribe(data => {
           for (const professor of Object.values(data)[1]) {
             this.list.items.push(professor);

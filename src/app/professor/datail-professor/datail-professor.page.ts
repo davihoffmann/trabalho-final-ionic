@@ -21,7 +21,7 @@ export class DatailProfessorPage implements OnInit {
   }
 
   deleteProfessor(professor) {
-    this.professorService.deleteProfessor('http://173.82.104.22:5000/teachers/', this.professor._id)
+    this.professorService.deleteProfessor('teachers/', this.professor._id)
       .pipe(first())
           .subscribe(
               result => this.router.navigate(['/list-professor']),

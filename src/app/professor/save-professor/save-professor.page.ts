@@ -44,15 +44,15 @@ export class SaveProfessorPage implements OnInit {
 
   public submit() {
       if (this.id !== undefined) {
-          this.professorService.updateProfessor('http://173.82.104.22:5000/teachers/', this.id, this.name,
+          this.professorService.updateProfessor('teachers', this.id, this.name,
               this.dataNascimento = new Date().toISOString(), this.curriculum, this.status, this.foto)
               .pipe(first())
               .subscribe(
                   result => this.router.navigate(['/list-professor']),
                   err => this.mensagem = 'Erro ao alterar o professor.'
-              );
+              );              
       } else {
-          this.professorService.saveProfessor('http://173.82.104.22:5000/teachers', this.name,
+          this.professorService.saveProfessor('teachers', this.name,
               this.dataNascimento = new Date().toISOString(), this.curriculum, this.status, this.foto)
               .pipe(first())
               .subscribe(
@@ -79,6 +79,22 @@ export class SaveProfessorPage implements OnInit {
         }, (err) => {
             this.mensagem = 'Erro ao tirar a foto do professor.';
         });
+  }
+
+  limpaDadosProfessor() {
+      this.foto = '';
+      this.id = '';
+      this.name = '';
+      this.dataNascimento = '';
+      this.curriculum = '';
+      this.status = false;
+      
+      this.professorService.currentProfessor.imagem = '';
+      this.professorService.currentProfessor._id = '';
+      this.professorService.currentProfessor.name = '';
+      this.professorService.currentProfessor.birthDate = '';
+      this.professorService.currentProfessor.curriculum = '';
+      this.professorService.currentProfessor.status = false;
   }
 
 }
